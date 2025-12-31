@@ -4,24 +4,35 @@ A modern, responsive calculator web application with a beautiful UI.
 
 ## Features
 
+- 🔐 **Google Sign-In Authentication** - Secure access with Firebase Authentication
 - Basic arithmetic operations (addition, subtraction, multiplication, division)
 - Clear (C) and Clear Entry (CE) functions
 - Delete last character (⌫)
 - Keyboard support for all operations
 - Responsive design that works on desktop and mobile
 - Modern gradient background and sleek dark theme
+- User profile display with Google account information
+
+## Prerequisites
+
+⚠️ **Important:** Before running the app, you need to set up Firebase Authentication:
+
+1. Follow the instructions in [FIREBASE_SETUP.md](./FIREBASE_SETUP.md)
+2. Configure your Firebase project credentials in `firebase-config.js`
+3. Enable Google Sign-In in your Firebase Console
 
 ## How to Run
 
 ### Method 1: Direct Browser (Easiest - No Server Needed) ⭐
 **This is the simplest method and works immediately!**
 
-1. Navigate to the project folder: `C:\Users\Prince Gupta\Desktop\DemocursorProject`
-2. Double-click `index.html` 
+1. **First, complete Firebase setup** (see Prerequisites above)
+2. Navigate to the project folder: `C:\Users\Prince Gupta\Desktop\DemocursorProject\Calculatorapp`
+3. Double-click `index.html` 
    - OR right-click `index.html` → "Open with" → choose your browser (Chrome, Edge, Firefox, etc.)
-3. The calculator will open and work immediately!
+4. Sign in with Google to access the calculator
 
-**Note:** This method works perfectly for this calculator app - no server installation needed!
+**Note:** Make sure you've configured Firebase before opening the app!
 
 ### Method 2: Using Python (if installed)
 ```bash
@@ -53,9 +64,11 @@ Then open: `http://localhost:8000`
 
 ## Files
 
-- `index.html` - Main HTML structure
+- `index.html` - Main HTML structure with authentication UI
 - `styles.css` - Styling and layout
-- `script.js` - Calculator logic and functionality
+- `script.js` - Calculator logic and Firebase authentication
+- `firebase-config.js` - Firebase configuration (needs your credentials)
+- `FIREBASE_SETUP.md` - Detailed Firebase setup instructions
 
 ## Browser Compatibility
 
