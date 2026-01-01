@@ -1,3 +1,6 @@
+import { initializeApp } from 'firebase/app';
+import { getAuth, GoogleAuthProvider } from 'firebase/auth';
+import { getFirestore } from 'firebase/firestore';
 // Firebase Configuration
 // Replace these values with your Firebase project configuration
 // Get these from: Firebase Console > Project Settings > General > Your apps
@@ -16,6 +19,7 @@ firebase.initializeApp(firebaseConfig);
 
 // Initialize Firebase Authentication
 const auth = firebase.auth();
+
 
 
 
