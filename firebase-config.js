@@ -1,7 +1,5 @@
 // Firebase Configuration
-// Replace these values with your Firebase project configuration
-// Get these from: Firebase Console > Project Settings > General > Your apps
-
+// Values are injected by Vite via import.meta.env (VITE_*)
 const firebaseConfig = {
     apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
     authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
@@ -11,9 +9,11 @@ const firebaseConfig = {
     appId: import.meta.env.VITE_FIREBASE_APP_ID
 };
 
-// Initialize Firebase
+// Initialize Firebase (compat SDK loaded via CDN in index.html)
 firebase.initializeApp(firebaseConfig);
 
-// Initialize Firebase Authentication
-const auth = firebase.auth();
+// Expose auth and config to the global window so other modules (and inline handlers)
+// can access them even when loaded as ES modules.
+window.firebaseConfig = firebaseConfig;
+window.auth = firebase.auth();
 

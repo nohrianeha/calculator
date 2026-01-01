@@ -17,8 +17,12 @@ const userPhoto = document.getElementById('user-photo');
 // Google Sign-In Provider
 const googleProvider = new firebase.auth.GoogleAuthProvider();
 
+// Read auth set by firebase-config.js (exposed on window)
+const auth = window.auth;
+
 // Authentication State Observer
-auth.onAuthStateChanged((user) => {
+if (auth) {
+    auth.onAuthStateChanged((user) => {
     if (user) {
         // User is signed in
         showCalculator(user);
@@ -26,7 +30,10 @@ auth.onAuthStateChanged((user) => {
         // User is signed out
         showAuthScreen();
     }
-});
+    });
+} else {
+    console.warn('Firebase auth not available yet. Ensure firebase-config.js runs before script.js.');
+}
 
 // Show authentication screen
 function showAuthScreen() {
@@ -221,4 +228,12 @@ document.addEventListener('keydown', (event) => {
 
 // Initialize display
 updateDisplay();
+
+// Expose functions for inline `onclick` handlers used in HTML
+window.appendNumber = appendNumber;
+window.appendOperator = appendOperator;
+window.calculate = calculate;
+window.clearAll = clearAll;
+window.clearEntry = clearEntry;
+window.deleteLast = deleteLast;
 
