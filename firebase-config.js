@@ -1,3 +1,6 @@
+import { initializeApp } from 'firebase/app';
+import { getAuth, GoogleAuthProvider } from 'firebase/auth';
+import { getFirestore } from 'firebase/firestore';
 // Firebase Configuration
 // Values are injected by Vite via import.meta.env (VITE_*)
 const firebaseConfig = {
@@ -16,4 +19,7 @@ firebase.initializeApp(firebaseConfig);
 // can access them even when loaded as ES modules.
 window.firebaseConfig = firebaseConfig;
 window.auth = firebase.auth();
+
+
+
 
