@@ -3,12 +3,12 @@
 // Get these from: Firebase Console > Project Settings > General > Your apps
 
 const firebaseConfig = {
-    apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
-    authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
-    projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
-    storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
-    messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
-    appId: import.meta.env.VITE_FIREBASE_APP_ID
+    apiKey: "AIzaSyAhm7FZWPBE8HEJkwtwuJ8v_hd471b1ZaQ",
+    authDomain: "test-project-191d4.firebaseapp.com",
+    projectId: "test-project-191d4",
+    storageBucket: "test-project-191d4.firebasestorage.app",
+    messagingSenderId: "221388670268",
+    appId: "1:221388670268:web:cb52413b52d01216870a39"
 };
 
 // Initialize Firebase
@@ -16,4 +16,5 @@ firebase.initializeApp(firebaseConfig);
 
 // Initialize Firebase Authentication
 const auth = firebase.auth();
+
 
